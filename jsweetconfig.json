@@ -1,0 +1,38 @@
+{
+	"@Root": {
+		"include": [ "java.awt.geom" ]
+	},
+	"@Erased": {
+		"include": [ "**.getBounds()", "**.hashCode()", "java.lang.ClassLoader", "**.getClassLoader()", 
+		             "org.apache.batik.parser.AbstractParser.parse(java.io.Reader)", 
+		             "org.apache.batik.parser.AbstractParser.parse(java.io.InputStream,java.lang.String)" ]
+	},
+	"@Replace('return null;')": {
+		"include": [ "org.apache.batik.i18n.LocalizableSupport.getResourceBundle(int)", 
+		             "org.apache.batik.i18n.LocalizableSupport.lookupResourceBundle(..)" ]
+	},
+	"@Replace('return key;')": {
+		"include": [ "org.apache.batik.i18n.LocalizableSupport.formatMessage(..)" ]
+	},
+	typeMapping: {
+		"java.lang.ClassLoader": "any",
+		"java.util.ResourceBundle": "any"
+	}
+	/*,
+	typeMapping: {
+		"java.awt.geom.GeneralPath": "GeneralPath"
+	},
+
+	"@Replace('return 'Undo '+this.getPresentationName();')": {
+		"include": [ "javax.swing.undo.AbstractUndoableEdit.getUndoPresentationName()" ]
+	},
+	"@Replace('return 'Redo '+this.getPresentationName();')": {
+		"include": [ "javax.swing.undo.AbstractUndoableEdit.getRedoPresentationName()" ]
+	},
+	"@Replace('if(this.inProgress) { if(this.canUndo()) { return this.editToBeUndone().getUndoPresentationName(); } else { return 'Undo'; } } else { return super.getUndoPresentationName(); }')": {
+		"include": [ "javax.swing.undo.UndoManager.getUndoPresentationName()" ]
+	},
+	"@Replace('if(this.inProgress) { if(this.canRedo()) { return this.editToBeRedone().getRedoPresentationName(); } else { return 'Redo'; } } else { return super.getRedoPresentationName(); }')": {
+		"include": [ "javax.swing.undo.UndoManager.getRedoPresentationName()" ]
+	}*/
+}
