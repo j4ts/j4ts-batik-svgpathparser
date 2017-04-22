@@ -48,7 +48,7 @@ var org;
                                     this.cx = 0;
                                     this.cy = 0;
                                     (function () {
-                                        _this.path = new GeneralPath(rule, initialCapacity);
+                                        _this.path = new java.awt.geom.GeneralPath(rule, initialCapacity);
                                     })();
                                 }
                                 else if (((rule != null && (rule["__interfaces"] != null && rule["__interfaces"].indexOf("java.awt.Shape") >= 0 || rule.constructor != null && rule.constructor["__interfaces"] != null && rule.constructor["__interfaces"].indexOf("java.awt.Shape") >= 0)) || rule === null) && initialCapacity === undefined) {
@@ -71,7 +71,7 @@ var org;
                                         this.cx = 0;
                                         this.cy = 0;
                                         (function () {
-                                            _this.path = new GeneralPath();
+                                            _this.path = new java.awt.geom.GeneralPath();
                                         })();
                                     }
                                     (function () {
@@ -95,7 +95,7 @@ var org;
                                     this.cx = 0;
                                     this.cy = 0;
                                     (function () {
-                                        _this.path = new GeneralPath(rule);
+                                        _this.path = new java.awt.geom.GeneralPath(rule);
                                     })();
                                 }
                                 else if (rule === undefined && initialCapacity === undefined) {
@@ -115,7 +115,7 @@ var org;
                                     this.cx = 0;
                                     this.cy = 0;
                                     (function () {
-                                        _this.path = new GeneralPath();
+                                        _this.path = new java.awt.geom.GeneralPath();
                                     })();
                                 }
                                 else
@@ -158,7 +158,7 @@ var org;
                                 var arc = ExtendedGeneralPath.computeArc(x0, y0, rx, ry, angle, largeArcFlag, sweepFlag, x, y);
                                 if (arc == null)
                                     return;
-                                var t = AffineTransform.getRotateInstance(/* toRadians */ (function (x) { return x * Math.PI / 180; })(angle), arc.getCenterX(), arc.getCenterY());
+                                var t = java.awt.geom.AffineTransform.getRotateInstance(/* toRadians */ (function (x) { return x * Math.PI / 180; })(angle), arc.getCenterX(), arc.getCenterY());
                                 var s = t.createTransformedShape(arc);
                                 this.path.append(s, true);
                                 this.makeRoom(7);
@@ -187,7 +187,7 @@ var org;
                              * @param {boolean} sweepFlag
                              * @param {number} x
                              * @param {number} y
-                             * @return {Arc2D}
+                             * @return {java.awt.geom.Arc2D}
                              */
                             ExtendedGeneralPath.computeArc = function (x0, y0, rx, ry, angle, largeArcFlag, sweepFlag, x, y) {
                                 var dx2 = (x0 - x) / 2.0;
@@ -243,7 +243,7 @@ var org;
                                 }
                                 angleExtent %= 360.0;
                                 angleStart %= 360.0;
-                                var arc = new Arc2D.Double();
+                                var arc = new java.awt.geom.Arc2D.Double();
                                 arc.x = cx - rx;
                                 arc.y = cy - ry;
                                 arc.width = rx * 2.0;
@@ -259,7 +259,7 @@ var org;
                              */
                             ExtendedGeneralPath.prototype.moveTo = function (x, y) {
                                 this.makeRoom(2);
-                                this.types[this.numSeg++] = PathIterator.SEG_MOVETO;
+                                this.types[this.numSeg++] = java.awt.geom.PathIterator.SEG_MOVETO;
                                 this.cx = this.mx = this.values[this.numVals++] = x;
                                 this.cy = this.my = this.values[this.numVals++] = y;
                             };
@@ -272,7 +272,7 @@ var org;
                                 this.checkMoveTo();
                                 this.path.lineTo(x, y);
                                 this.makeRoom(2);
-                                this.types[this.numSeg++] = PathIterator.SEG_LINETO;
+                                this.types[this.numSeg++] = java.awt.geom.PathIterator.SEG_LINETO;
                                 this.cx = this.values[this.numVals++] = x;
                                 this.cy = this.values[this.numVals++] = y;
                             };
@@ -287,7 +287,7 @@ var org;
                                 this.checkMoveTo();
                                 this.path.quadTo(x1, y1, x2, y2);
                                 this.makeRoom(4);
-                                this.types[this.numSeg++] = PathIterator.SEG_QUADTO;
+                                this.types[this.numSeg++] = java.awt.geom.PathIterator.SEG_QUADTO;
                                 this.values[this.numVals++] = x1;
                                 this.values[this.numVals++] = y1;
                                 this.cx = this.values[this.numVals++] = x2;
@@ -306,7 +306,7 @@ var org;
                                 this.checkMoveTo();
                                 this.path.curveTo(x1, y1, x2, y2, x3, y3);
                                 this.makeRoom(6);
-                                this.types[this.numSeg++] = PathIterator.SEG_CUBICTO;
+                                this.types[this.numSeg++] = java.awt.geom.PathIterator.SEG_CUBICTO;
                                 this.values[this.numVals++] = x1;
                                 this.values[this.numVals++] = y1;
                                 this.values[this.numVals++] = x2;
@@ -318,12 +318,12 @@ var org;
                              * Delegates to the enclosed <code>GeneralPath</code>.
                              */
                             ExtendedGeneralPath.prototype.closePath = function () {
-                                if ((this.numSeg !== 0) && (this.types[this.numSeg - 1] === PathIterator.SEG_CLOSE))
+                                if ((this.numSeg !== 0) && (this.types[this.numSeg - 1] === java.awt.geom.PathIterator.SEG_CLOSE))
                                     return;
-                                if ((this.numSeg !== 0) && (this.types[this.numSeg - 1] !== PathIterator.SEG_MOVETO))
+                                if ((this.numSeg !== 0) && (this.types[this.numSeg - 1] !== java.awt.geom.PathIterator.SEG_MOVETO))
                                     this.path.closePath();
                                 this.makeRoom(0);
-                                this.types[this.numSeg++] = PathIterator.SEG_CLOSE;
+                                this.types[this.numSeg++] = java.awt.geom.PathIterator.SEG_CLOSE;
                                 this.cx = this.mx;
                                 this.cy = this.my;
                             };
@@ -335,13 +335,13 @@ var org;
                                 if (this.numSeg === 0)
                                     return;
                                 switch ((this.types[this.numSeg - 1])) {
-                                    case PathIterator.SEG_MOVETO:
+                                    case java.awt.geom.PathIterator.SEG_MOVETO:
                                         this.path.moveTo(this.values[this.numVals - 2], this.values[this.numVals - 1]);
                                         break;
-                                    case PathIterator.SEG_CLOSE:
+                                    case java.awt.geom.PathIterator.SEG_CLOSE:
                                         if (this.numSeg === 1)
                                             return;
-                                        if (this.types[this.numSeg - 2] === PathIterator.SEG_MOVETO)
+                                        if (this.types[this.numSeg - 2] === java.awt.geom.PathIterator.SEG_MOVETO)
                                             this.path.moveTo(this.values[this.numVals - 2], this.values[this.numVals - 1]);
                                         break;
                                     default:
@@ -354,7 +354,7 @@ var org;
                              * @param {boolean} connect
                              */
                             ExtendedGeneralPath.prototype.append$java_awt_Shape$boolean = function (s, connect) {
-                                this.append$java_awt_geom_PathIterator$boolean(s.getPathIterator(new AffineTransform()), connect);
+                                this.append$java_awt_geom_PathIterator$boolean(s.getPathIterator(new java.awt.geom.AffineTransform()), connect);
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
@@ -376,7 +376,7 @@ var org;
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {PathIterator} pi
+                             * @param {java.awt.geom.PathIterator} pi
                              * @param {boolean} connect
                              */
                             ExtendedGeneralPath.prototype.append$java_awt_geom_PathIterator$boolean = function (pi, connect) {
@@ -387,11 +387,11 @@ var org;
                                     var type = pi.currentSegment(vals);
                                     pi.next();
                                     if (connect && (this.numVals !== 0)) {
-                                        if (type === PathIterator.SEG_MOVETO) {
+                                        if (type === java.awt.geom.PathIterator.SEG_MOVETO) {
                                             var x = vals[0];
                                             var y = vals[1];
                                             if ((x !== this.cx) || (y !== this.cy)) {
-                                                type = PathIterator.SEG_LINETO;
+                                                type = java.awt.geom.PathIterator.SEG_LINETO;
                                             }
                                             else {
                                                 if (pi.isDone())
@@ -403,20 +403,20 @@ var org;
                                         connect = false;
                                     }
                                     switch ((type)) {
-                                        case PathIterator.SEG_CLOSE:
+                                        case java.awt.geom.PathIterator.SEG_CLOSE:
                                             this.closePath();
                                             break;
-                                        case PathIterator.SEG_MOVETO:
-                                            this.moveTo(vals[0], vals[1]);
+                                        case java.awt.geom.PathIterator.SEG_MOVETO:
+                                            this.moveTo((Math.fround ? (vals[0]) : Math.fround(vals[0])), (Math.fround ? (vals[1]) : Math.fround(vals[1])));
                                             break;
-                                        case PathIterator.SEG_LINETO:
-                                            this.lineTo(vals[0], vals[1]);
+                                        case java.awt.geom.PathIterator.SEG_LINETO:
+                                            this.lineTo((Math.fround ? (vals[0]) : Math.fround(vals[0])), (Math.fround ? (vals[1]) : Math.fround(vals[1])));
                                             break;
-                                        case PathIterator.SEG_QUADTO:
-                                            this.quadTo(vals[0], vals[1], vals[2], vals[3]);
+                                        case java.awt.geom.PathIterator.SEG_QUADTO:
+                                            this.quadTo((Math.fround ? (vals[0]) : Math.fround(vals[0])), (Math.fround ? (vals[1]) : Math.fround(vals[1])), (Math.fround ? (vals[2]) : Math.fround(vals[2])), (Math.fround ? (vals[3]) : Math.fround(vals[3])));
                                             break;
-                                        case PathIterator.SEG_CUBICTO:
-                                            this.curveTo(vals[0], vals[1], vals[2], vals[3], vals[4], vals[5]);
+                                        case java.awt.geom.PathIterator.SEG_CUBICTO:
+                                            this.curveTo((Math.fround ? (vals[0]) : Math.fround(vals[0])), (Math.fround ? (vals[1]) : Math.fround(vals[1])), (Math.fround ? (vals[2]) : Math.fround(vals[2])), (Math.fround ? (vals[3]) : Math.fround(vals[3])), (Math.fround ? (vals[4]) : Math.fround(vals[4])), (Math.fround ? (vals[5]) : Math.fround(vals[5])));
                                             break;
                                     }
                                 }
@@ -435,11 +435,11 @@ var org;
                                     var type = epi['currentSegment$float_A'](vals);
                                     epi.next();
                                     if (connect && (this.numVals !== 0)) {
-                                        if (type === PathIterator.SEG_MOVETO) {
+                                        if (type === java.awt.geom.PathIterator.SEG_MOVETO) {
                                             var x = vals[0];
                                             var y = vals[1];
                                             if ((x !== this.cx) || (y !== this.cy)) {
-                                                type = PathIterator.SEG_LINETO;
+                                                type = java.awt.geom.PathIterator.SEG_LINETO;
                                             }
                                             else {
                                                 if (epi.isDone())
@@ -451,19 +451,19 @@ var org;
                                         connect = false;
                                     }
                                     switch ((type)) {
-                                        case PathIterator.SEG_CLOSE:
+                                        case java.awt.geom.PathIterator.SEG_CLOSE:
                                             this.closePath();
                                             break;
-                                        case PathIterator.SEG_MOVETO:
+                                        case java.awt.geom.PathIterator.SEG_MOVETO:
                                             this.moveTo(vals[0], vals[1]);
                                             break;
-                                        case PathIterator.SEG_LINETO:
+                                        case java.awt.geom.PathIterator.SEG_LINETO:
                                             this.lineTo(vals[0], vals[1]);
                                             break;
-                                        case PathIterator.SEG_QUADTO:
+                                        case java.awt.geom.PathIterator.SEG_QUADTO:
                                             this.quadTo(vals[0], vals[1], vals[2], vals[3]);
                                             break;
-                                        case PathIterator.SEG_CUBICTO:
+                                        case java.awt.geom.PathIterator.SEG_CUBICTO:
                                             this.curveTo(vals[0], vals[1], vals[2], vals[3], vals[4], vals[5]);
                                             break;
                                         case org.apache.batik.ext.awt.geom.ExtendedPathIterator.SEG_ARCTO:
@@ -489,12 +489,12 @@ var org;
                             };
                             /**
                              * get the current position or <code>null</code>.
-                             * @return {Point2D}
+                             * @return {java.awt.geom.Point2D}
                              */
                             ExtendedGeneralPath.prototype.getCurrentPoint = function () {
                                 if (this.numVals === 0)
                                     return null;
-                                return new Point2D.Double(this.cx, this.cy);
+                                return new java.awt.geom.Point2D.Double(this.cx, this.cy);
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
@@ -508,15 +508,15 @@ var org;
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {AffineTransform} at
+                             * @param {java.awt.geom.AffineTransform} at
                              */
                             ExtendedGeneralPath.prototype.transform = function (at) {
-                                if (at.getType() !== AffineTransform.TYPE_IDENTITY)
+                                if (at.getType() !== java.awt.geom.AffineTransform.TYPE_IDENTITY)
                                     throw Object.defineProperty(new Error("ExtendedGeneralPaths can not be transformed"), '__class', { configurable: true, value: 'java.lang.IllegalArgumentException' });
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {AffineTransform} at
+                             * @param {java.awt.geom.AffineTransform} at
                              * @return {java.awt.Shape}
                              */
                             ExtendedGeneralPath.prototype.createTransformedShape = function (at) {
@@ -524,7 +524,7 @@ var org;
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @return {Rectangle2D}
+                             * @return {java.awt.geom.Rectangle2D}
                              */
                             ExtendedGeneralPath.prototype.getBounds2D = function () {
                                 return this.path.getBounds2D();
@@ -540,7 +540,7 @@ var org;
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {Point2D} p
+                             * @param {java.awt.geom.Point2D} p
                              * @return {boolean}
                              */
                             ExtendedGeneralPath.prototype.contains$java_awt_geom_Point2D = function (p) {
@@ -572,10 +572,10 @@ var org;
                                 else if (((typeof x === 'number') || x === null) && ((typeof y === 'number') || y === null) && w === undefined && h === undefined) {
                                     return this.contains$double$double(x, y);
                                 }
-                                else if (((x != null && x instanceof Point2D) || x === null) && y === undefined && w === undefined && h === undefined) {
+                                else if (((x != null && x instanceof java.awt.geom.Point2D) || x === null) && y === undefined && w === undefined && h === undefined) {
                                     return this.contains$java_awt_geom_Point2D(x);
                                 }
-                                else if (((x != null && x instanceof Rectangle2D) || x === null) && y === undefined && w === undefined && h === undefined) {
+                                else if (((x != null && x instanceof java.awt.geom.Rectangle2D) || x === null) && y === undefined && w === undefined && h === undefined) {
                                     return this.contains$java_awt_geom_Rectangle2D(x);
                                 }
                                 else
@@ -583,7 +583,7 @@ var org;
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {Rectangle2D} r
+                             * @param {java.awt.geom.Rectangle2D} r
                              * @return {boolean}
                              */
                             ExtendedGeneralPath.prototype.contains$java_awt_geom_Rectangle2D = function (r) {
@@ -612,7 +612,7 @@ var org;
                                 if (((typeof x === 'number') || x === null) && ((typeof y === 'number') || y === null) && ((typeof w === 'number') || w === null) && ((typeof h === 'number') || h === null)) {
                                     return this.intersects$double$double$double$double(x, y, w, h);
                                 }
-                                else if (((x != null && x instanceof Rectangle2D) || x === null) && y === undefined && w === undefined && h === undefined) {
+                                else if (((x != null && x instanceof java.awt.geom.Rectangle2D) || x === null) && y === undefined && w === undefined && h === undefined) {
                                     return this.intersects$java_awt_geom_Rectangle2D(x);
                                 }
                                 else
@@ -620,7 +620,7 @@ var org;
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {Rectangle2D} r
+                             * @param {java.awt.geom.Rectangle2D} r
                              * @return {boolean}
                              */
                             ExtendedGeneralPath.prototype.intersects$java_awt_geom_Rectangle2D = function (r) {
@@ -628,32 +628,32 @@ var org;
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {AffineTransform} at
-                             * @return {PathIterator}
+                             * @param {java.awt.geom.AffineTransform} at
+                             * @return {java.awt.geom.PathIterator}
                              */
                             ExtendedGeneralPath.prototype.getPathIterator$java_awt_geom_AffineTransform = function (at) {
                                 return this.path.getPathIterator(at);
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {AffineTransform} at
+                             * @param {java.awt.geom.AffineTransform} at
                              * @param {number} flatness
-                             * @return {PathIterator}
+                             * @return {java.awt.geom.PathIterator}
                              */
                             ExtendedGeneralPath.prototype.getPathIterator$java_awt_geom_AffineTransform$double = function (at, flatness) {
                                 return this.path.getPathIterator(at, flatness);
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {AffineTransform} at
+                             * @param {java.awt.geom.AffineTransform} at
                              * @param {number} flatness
-                             * @return {PathIterator}
+                             * @return {java.awt.geom.PathIterator}
                              */
                             ExtendedGeneralPath.prototype.getPathIterator = function (at, flatness) {
-                                if (((at != null && at instanceof AffineTransform) || at === null) && ((typeof flatness === 'number') || flatness === null)) {
+                                if (((at != null && at instanceof java.awt.geom.AffineTransform) || at === null) && ((typeof flatness === 'number') || flatness === null)) {
                                     return this.getPathIterator$java_awt_geom_AffineTransform$double(at, flatness);
                                 }
-                                else if (((at != null && at instanceof AffineTransform) || at === null) && flatness === undefined) {
+                                else if (((at != null && at instanceof java.awt.geom.AffineTransform) || at === null) && flatness === undefined) {
                                     return this.getPathIterator$java_awt_geom_AffineTransform(at);
                                 }
                                 else
@@ -938,20 +938,20 @@ var org;
                              * subpath should be closed by appending a line segment back to
                              * the point corresponding to the most recent SEG_MOVETO.
                              */
-                            ExtendedPathIterator.SEG_CLOSE = PathIterator.SEG_CLOSE;
+                            ExtendedPathIterator.SEG_CLOSE = java.awt.geom.PathIterator.SEG_CLOSE;
                             /**
                              *
                              * The segment type constant for a point that specifies the end
                              * point of a line to be drawn from the most recently specified
                              * point.
                              */
-                            ExtendedPathIterator.SEG_MOVETO = PathIterator.SEG_MOVETO;
+                            ExtendedPathIterator.SEG_MOVETO = java.awt.geom.PathIterator.SEG_MOVETO;
                             /**
                              * The segment type constant for a point that specifies the end
                              * point of a line to be drawn from the most recently specified
                              * point.
                              */
-                            ExtendedPathIterator.SEG_LINETO = PathIterator.SEG_LINETO;
+                            ExtendedPathIterator.SEG_LINETO = java.awt.geom.PathIterator.SEG_LINETO;
                             /**
                              * The segment type constant for the pair of points that specify a
                              * quadratic parametric curve to be drawn from the most recently
@@ -960,7 +960,7 @@ var org;
                              * most recently specified (current) point (CP), the first control
                              * point (P1), and the final interpolated control point (P2).
                              */
-                            ExtendedPathIterator.SEG_QUADTO = PathIterator.SEG_QUADTO;
+                            ExtendedPathIterator.SEG_QUADTO = java.awt.geom.PathIterator.SEG_QUADTO;
                             /**
                              * The segment type constant for the set of 3 points that specify
                              * a cubic parametric curve to be drawn from the most recently
@@ -970,7 +970,7 @@ var org;
                              * point (P1), the second control point (P2), and the final
                              * interpolated control point (P3).
                              */
-                            ExtendedPathIterator.SEG_CUBICTO = PathIterator.SEG_CUBICTO;
+                            ExtendedPathIterator.SEG_CUBICTO = java.awt.geom.PathIterator.SEG_CUBICTO;
                             /**
                              * The segment type constant for an elliptical arc.  This consists of
                              * Seven values [rx, ry, angle, largeArcFlag, sweepFlag, x, y].
@@ -988,7 +988,7 @@ var org;
                              * direction from that point to infinity is crossed by path
                              * segments an odd number of times.
                              */
-                            ExtendedPathIterator.WIND_EVEN_ODD = PathIterator.WIND_EVEN_ODD;
+                            ExtendedPathIterator.WIND_EVEN_ODD = java.awt.geom.PathIterator.WIND_EVEN_ODD;
                             /**
                              * The winding rule constant for specifying a non-zero rule for
                              * determining the interior of a path. The non-zero rule specifies
@@ -997,7 +997,7 @@ var org;
                              * segments a different number of times in the counter-clockwise
                              * direction than the clockwise direction.
                              */
-                            ExtendedPathIterator.WIND_NON_ZERO = PathIterator.WIND_NON_ZERO;
+                            ExtendedPathIterator.WIND_NON_ZERO = java.awt.geom.PathIterator.WIND_NON_ZERO;
                         })(ExtendedPathIterator = geom.ExtendedPathIterator || (geom.ExtendedPathIterator = {}));
                     })(geom = awt.geom || (awt.geom = {}));
                 })(awt = ext.awt || (ext.awt = {}));
@@ -1645,8 +1645,8 @@ var org;
                     AWTPathProducer.prototype.closePath = function () {
                         this.path.closePath();
                         var pt = this.path.getCurrentPoint();
-                        this.currentX = pt.getX();
-                        this.currentY = pt.getY();
+                        this.currentX = (Math.fround ? (pt.getX()) : Math.fround(pt.getX()));
+                        this.currentY = (Math.fround ? (pt.getY()) : Math.fround(pt.getY()));
                     };
                     /**
                      * Implements {@link PathHandler#linetoRel(float,float)}.
@@ -3083,7 +3083,7 @@ var org;
                         if (mant >= (1 << 26)) {
                             mant++;
                         }
-                        return ((exp > 0) ? mant * NumberParser.pow10_$LI$()[exp] : mant / NumberParser.pow10_$LI$()[-exp]);
+                        return (Math.fround ? (((exp > 0) ? mant * NumberParser.pow10_$LI$()[exp] : mant / NumberParser.pow10_$LI$()[-exp])) : Math.fround(((exp > 0) ? mant * NumberParser.pow10_$LI$()[exp] : mant / NumberParser.pow10_$LI$()[-exp])));
                     };
                     NumberParser.pow10_$LI$ = function () { NumberParser.__static_initialize(); if (NumberParser.pow10 == null)
                         NumberParser.pow10 = (function (s) { var a = []; while (s-- > 0)

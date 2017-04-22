@@ -11,7 +11,7 @@ declare namespace org.apache.batik.ext.awt.geom {
         /**
          * The enclosed general path.
          */
-        path: GeneralPath;
+        path: java.awt.geom.GeneralPath;
         numVals: number;
         numSeg: number;
         values: number[];
@@ -61,9 +61,9 @@ declare namespace org.apache.batik.ext.awt.geom {
          * @param {boolean} sweepFlag
          * @param {number} x
          * @param {number} y
-         * @return {Arc2D}
+         * @return {java.awt.geom.Arc2D}
          */
-        static computeArc(x0: number, y0: number, rx: number, ry: number, angle: number, largeArcFlag: boolean, sweepFlag: boolean, x: number, y: number): Arc2D;
+        static computeArc(x0: number, y0: number, rx: number, ry: number, angle: number, largeArcFlag: boolean, sweepFlag: boolean, x: number, y: number): java.awt.geom.Arc2D;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
          * @param {number} x
@@ -117,10 +117,10 @@ declare namespace org.apache.batik.ext.awt.geom {
         append(s?: any, connect?: any): any;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {PathIterator} pi
+         * @param {java.awt.geom.PathIterator} pi
          * @param {boolean} connect
          */
-        append$java_awt_geom_PathIterator$boolean(pi: PathIterator, connect: boolean): void;
+        append$java_awt_geom_PathIterator$boolean(pi: java.awt.geom.PathIterator, connect: boolean): void;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
          * @param {org.apache.batik.ext.awt.geom.ExtendedPathIterator} epi
@@ -139,29 +139,29 @@ declare namespace org.apache.batik.ext.awt.geom {
         setWindingRule(rule: number): void;
         /**
          * get the current position or <code>null</code>.
-         * @return {Point2D}
+         * @return {java.awt.geom.Point2D}
          */
-        getCurrentPoint(): Point2D;
+        getCurrentPoint(): java.awt.geom.Point2D;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
          */
         reset(): void;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {AffineTransform} at
+         * @param {java.awt.geom.AffineTransform} at
          */
-        transform(at: AffineTransform): void;
+        transform(at: java.awt.geom.AffineTransform): void;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {AffineTransform} at
+         * @param {java.awt.geom.AffineTransform} at
          * @return {java.awt.Shape}
          */
-        createTransformedShape(at: AffineTransform): java.awt.Shape;
+        createTransformedShape(at: java.awt.geom.AffineTransform): java.awt.Shape;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @return {Rectangle2D}
+         * @return {java.awt.geom.Rectangle2D}
          */
-        getBounds2D(): Rectangle2D;
+        getBounds2D(): java.awt.geom.Rectangle2D;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
          * @param {number} x
@@ -171,10 +171,10 @@ declare namespace org.apache.batik.ext.awt.geom {
         contains$double$double(x: number, y: number): boolean;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {Point2D} p
+         * @param {java.awt.geom.Point2D} p
          * @return {boolean}
          */
-        contains$java_awt_geom_Point2D(p: Point2D): boolean;
+        contains$java_awt_geom_Point2D(p: java.awt.geom.Point2D): boolean;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
          * @param {number} x
@@ -195,10 +195,10 @@ declare namespace org.apache.batik.ext.awt.geom {
         contains(x?: any, y?: any, w?: any, h?: any): any;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {Rectangle2D} r
+         * @param {java.awt.geom.Rectangle2D} r
          * @return {boolean}
          */
-        contains$java_awt_geom_Rectangle2D(r: Rectangle2D): boolean;
+        contains$java_awt_geom_Rectangle2D(r: java.awt.geom.Rectangle2D): boolean;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
          * @param {number} x
@@ -219,28 +219,28 @@ declare namespace org.apache.batik.ext.awt.geom {
         intersects(x?: any, y?: any, w?: any, h?: any): any;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {Rectangle2D} r
+         * @param {java.awt.geom.Rectangle2D} r
          * @return {boolean}
          */
-        intersects$java_awt_geom_Rectangle2D(r: Rectangle2D): boolean;
+        intersects$java_awt_geom_Rectangle2D(r: java.awt.geom.Rectangle2D): boolean;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {AffineTransform} at
-         * @return {PathIterator}
+         * @param {java.awt.geom.AffineTransform} at
+         * @return {java.awt.geom.PathIterator}
          */
-        getPathIterator$java_awt_geom_AffineTransform(at: AffineTransform): PathIterator;
+        getPathIterator$java_awt_geom_AffineTransform(at: java.awt.geom.AffineTransform): java.awt.geom.PathIterator;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {AffineTransform} at
+         * @param {java.awt.geom.AffineTransform} at
          * @param {number} flatness
-         * @return {PathIterator}
+         * @return {java.awt.geom.PathIterator}
          */
-        getPathIterator$java_awt_geom_AffineTransform$double(at: AffineTransform, flatness: number): PathIterator;
+        getPathIterator$java_awt_geom_AffineTransform$double(at: java.awt.geom.AffineTransform, flatness: number): java.awt.geom.PathIterator;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {AffineTransform} at
+         * @param {java.awt.geom.AffineTransform} at
          * @param {number} flatness
-         * @return {PathIterator}
+         * @return {java.awt.geom.PathIterator}
          */
         getPathIterator(at?: any, flatness?: any): any;
         /**
