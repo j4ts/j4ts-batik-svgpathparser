@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-/* Generated from Java with JSweet 2.0.0-SNAPSHOT - http://www.jsweet.org */
+/* Generated from Java with JSweet 2.0.0-rc1 - http://www.jsweet.org */
 var org;
 (function (org) {
     var apache;
@@ -348,17 +348,12 @@ var org;
                                         break;
                                 }
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {java.awt.Shape} s
-                             * @param {boolean} connect
-                             */
                             ExtendedGeneralPath.prototype.append$java_awt_Shape$boolean = function (s, connect) {
                                 this.append$java_awt_geom_PathIterator$boolean(s.getPathIterator(new java.awt.geom.AffineTransform()), connect);
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {java.awt.Shape} s
+                             * @param {*} s
                              * @param {boolean} connect
                              */
                             ExtendedGeneralPath.prototype.append = function (s, connect) {
@@ -374,11 +369,6 @@ var org;
                                 else
                                     throw new Error('invalid overload');
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {java.awt.geom.PathIterator} pi
-                             * @param {boolean} connect
-                             */
                             ExtendedGeneralPath.prototype.append$java_awt_geom_PathIterator$boolean = function (pi, connect) {
                                 var vals = [0, 0, 0, 0, 0, 0];
                                 while ((!pi.isDone())) {
@@ -407,26 +397,21 @@ var org;
                                             this.closePath();
                                             break;
                                         case java.awt.geom.PathIterator.SEG_MOVETO:
-                                            this.moveTo((Math.fround ? (vals[0]) : Math.fround(vals[0])), (Math.fround ? (vals[1]) : Math.fround(vals[1])));
+                                            this.moveTo(vals[0], vals[1]);
                                             break;
                                         case java.awt.geom.PathIterator.SEG_LINETO:
-                                            this.lineTo((Math.fround ? (vals[0]) : Math.fround(vals[0])), (Math.fround ? (vals[1]) : Math.fround(vals[1])));
+                                            this.lineTo(vals[0], vals[1]);
                                             break;
                                         case java.awt.geom.PathIterator.SEG_QUADTO:
-                                            this.quadTo((Math.fround ? (vals[0]) : Math.fround(vals[0])), (Math.fround ? (vals[1]) : Math.fround(vals[1])), (Math.fround ? (vals[2]) : Math.fround(vals[2])), (Math.fround ? (vals[3]) : Math.fround(vals[3])));
+                                            this.quadTo(vals[0], vals[1], vals[2], vals[3]);
                                             break;
                                         case java.awt.geom.PathIterator.SEG_CUBICTO:
-                                            this.curveTo((Math.fround ? (vals[0]) : Math.fround(vals[0])), (Math.fround ? (vals[1]) : Math.fround(vals[1])), (Math.fround ? (vals[2]) : Math.fround(vals[2])), (Math.fround ? (vals[3]) : Math.fround(vals[3])), (Math.fround ? (vals[4]) : Math.fround(vals[4])), (Math.fround ? (vals[5]) : Math.fround(vals[5])));
+                                            this.curveTo(vals[0], vals[1], vals[2], vals[3], vals[4], vals[5]);
                                             break;
                                     }
                                 }
                                 ;
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {org.apache.batik.ext.awt.geom.ExtendedPathIterator} epi
-                             * @param {boolean} connect
-                             */
                             ExtendedGeneralPath.prototype.append$org_apache_batik_ext_awt_geom_ExtendedPathIterator$boolean = function (epi, connect) {
                                 var vals = [0, 0, 0, 0, 0, 0, 0];
                                 while ((!epi.isDone())) {
@@ -512,12 +497,12 @@ var org;
                              */
                             ExtendedGeneralPath.prototype.transform = function (at) {
                                 if (at.getType() !== java.awt.geom.AffineTransform.TYPE_IDENTITY)
-                                    throw Object.defineProperty(new Error("ExtendedGeneralPaths can not be transformed"), '__class', { configurable: true, value: 'java.lang.IllegalArgumentException' });
+                                    throw Object.defineProperty(new Error("ExtendedGeneralPaths can not be transformed"), '__classes', { configurable: true, value: ['java.lang.Throwable', 'java.lang.Object', 'java.lang.RuntimeException', 'java.lang.IllegalArgumentException', 'java.lang.Exception'] });
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
                              * @param {java.awt.geom.AffineTransform} at
-                             * @return {java.awt.Shape}
+                             * @return {*}
                              */
                             ExtendedGeneralPath.prototype.createTransformedShape = function (at) {
                                 return this.path.createTransformedShape(at);
@@ -529,31 +514,12 @@ var org;
                             ExtendedGeneralPath.prototype.getBounds2D = function () {
                                 return this.path.getBounds2D();
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {number} x
-                             * @param {number} y
-                             * @return {boolean}
-                             */
                             ExtendedGeneralPath.prototype.contains$double$double = function (x, y) {
                                 return this.path.contains(x, y);
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {java.awt.geom.Point2D} p
-                             * @return {boolean}
-                             */
                             ExtendedGeneralPath.prototype.contains$java_awt_geom_Point2D = function (p) {
                                 return this.path.contains(p);
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {number} x
-                             * @param {number} y
-                             * @param {number} w
-                             * @param {number} h
-                             * @return {boolean}
-                             */
                             ExtendedGeneralPath.prototype.contains$double$double$double$double = function (x, y, w, h) {
                                 return this.path.contains(x, y, w, h);
                             };
@@ -581,22 +547,9 @@ var org;
                                 else
                                     throw new Error('invalid overload');
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {java.awt.geom.Rectangle2D} r
-                             * @return {boolean}
-                             */
                             ExtendedGeneralPath.prototype.contains$java_awt_geom_Rectangle2D = function (r) {
                                 return this.path.contains(r);
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {number} x
-                             * @param {number} y
-                             * @param {number} w
-                             * @param {number} h
-                             * @return {boolean}
-                             */
                             ExtendedGeneralPath.prototype.intersects$double$double$double$double = function (x, y, w, h) {
                                 return this.path.intersects(x, y, w, h);
                             };
@@ -618,28 +571,12 @@ var org;
                                 else
                                     throw new Error('invalid overload');
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {java.awt.geom.Rectangle2D} r
-                             * @return {boolean}
-                             */
                             ExtendedGeneralPath.prototype.intersects$java_awt_geom_Rectangle2D = function (r) {
                                 return this.path.intersects(r);
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {java.awt.geom.AffineTransform} at
-                             * @return {java.awt.geom.PathIterator}
-                             */
                             ExtendedGeneralPath.prototype.getPathIterator$java_awt_geom_AffineTransform = function (at) {
                                 return this.path.getPathIterator(at);
                             };
-                            /**
-                             * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @param {java.awt.geom.AffineTransform} at
-                             * @param {number} flatness
-                             * @return {java.awt.geom.PathIterator}
-                             */
                             ExtendedGeneralPath.prototype.getPathIterator$java_awt_geom_AffineTransform$double = function (at, flatness) {
                                 return this.path.getPathIterator(at, flatness);
                             };
@@ -647,7 +584,7 @@ var org;
                              * Delegates to the enclosed <code>GeneralPath</code>.
                              * @param {java.awt.geom.AffineTransform} at
                              * @param {number} flatness
-                             * @return {java.awt.geom.PathIterator}
+                             * @return {*}
                              */
                             ExtendedGeneralPath.prototype.getPathIterator = function (at, flatness) {
                                 if (((at != null && at instanceof java.awt.geom.AffineTransform) || at === null) && ((typeof flatness === 'number') || flatness === null)) {
@@ -661,7 +598,7 @@ var org;
                             };
                             /**
                              * Delegates to the enclosed <code>GeneralPath</code>.
-                             * @return {org.apache.batik.ext.awt.geom.ExtendedPathIterator}
+                             * @return {*}
                              */
                             ExtendedGeneralPath.prototype.getExtendedPathIterator = function () {
                                 return new ExtendedGeneralPath.EPI(this);
@@ -1018,6 +955,7 @@ var org;
                  *
                  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
                  * @version $Id$
+                 * @class
                  */
                 var LocaleGroup = (function () {
                     function LocaleGroup() {
@@ -1059,7 +997,7 @@ var org;
                 /**
                  * Same as LocalizableSupport(cls, null).
                  * @param {string} s
-                 * @param {Function<>} cls
+                 * @param {*} cls
                  * @param {*} cl
                  * @class
                  */
@@ -1074,7 +1012,7 @@ var org;
                          * The resources
                          */
                         this.resourceBundles = ([]);
-                        if (((typeof s === 'string') || s === null) && ((cls != null && cls instanceof Function) || cls === null) && ((cl != null) || cl === null)) {
+                        if (((typeof s === 'string') || s === null) && ((cls != null) || cls === null) && ((cl != null) || cl === null)) {
                             var __args = Array.prototype.slice.call(arguments);
                             this.bundleName = null;
                             this.classLoader = null;
@@ -1096,7 +1034,7 @@ var org;
                                 _this.classLoader = cl;
                             })();
                         }
-                        else if (((typeof s === 'string') || s === null) && ((cls != null && cls instanceof Function) || cls === null) && cl === undefined) {
+                        else if (((typeof s === 'string') || s === null) && ((cls != null) || cls === null) && cl === undefined) {
                             var __args = Array.prototype.slice.call(arguments);
                             {
                                 var __args_2 = Array.prototype.slice.call(arguments);
@@ -1256,10 +1194,6 @@ var org;
                         this.lastResourceClass = null;
                         return true;
                     };
-                    /**
-                     * Here for backwards compatability
-                     * @return {*}
-                     */
                     LocalizableSupport.prototype.getResourceBundle$ = function () {
                         return this.getResourceBundle$int(0);
                     };
@@ -1310,8 +1244,9 @@ var org;
                             }
                             ;
                         }
+                        ;
                         var classStr = (this.cls != null) ? this.cls.toString() : this.bundleName;
-                        throw Object.defineProperty(new Error("Unable to find resource: " + key), '__class', { configurable: true, value: 'java.util.MissingResourceException' });
+                        throw Object.defineProperty(new Error("Unable to find resource: " + key), '__classes', { configurable: true, value: ['java.lang.Throwable', 'java.util.MissingResourceException', 'java.lang.Object', 'java.lang.RuntimeException', 'java.lang.Exception'] });
                     };
                     /**
                      * Returns the integer mapped with the given string
@@ -1325,14 +1260,14 @@ var org;
                             return parseInt(i);
                         }
                         catch (e) {
-                            throw Object.defineProperty(new Error("Malformed integer"), '__class', { configurable: true, value: 'java.util.MissingResourceException' });
+                            throw Object.defineProperty(new Error("Malformed integer"), '__classes', { configurable: true, value: ['java.lang.Throwable', 'java.util.MissingResourceException', 'java.lang.Object', 'java.lang.RuntimeException', 'java.lang.Exception'] });
                         }
                         ;
                     };
                     LocalizableSupport.prototype.getCharacter = function (key) {
                         var s = this.getString(key);
                         if (s == null || s.length === 0) {
-                            throw Object.defineProperty(new Error("Malformed character"), '__class', { configurable: true, value: 'java.util.MissingResourceException' });
+                            throw Object.defineProperty(new Error("Malformed character"), '__classes', { configurable: true, value: ['java.lang.Throwable', 'java.util.MissingResourceException', 'java.lang.Object', 'java.lang.RuntimeException', 'java.lang.Exception'] });
                         }
                         return (s.charAt(0)).charCodeAt(0);
                     };
@@ -1358,6 +1293,7 @@ var org;
                  *
                  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
                  * @version $Id$
+                 * @class
                  */
                 var AbstractParser = (function () {
                     function AbstractParser() {
@@ -1413,15 +1349,11 @@ var org;
                      * <p>Applications may register a new or different handler in the
                      * middle of a parse, and the parser must begin using the new
                      * handler immediately.</p>
-                     * @param {org.apache.batik.parser.ErrorHandler} handler The error handler.
+                     * @param {*} handler The error handler.
                      */
                     AbstractParser.prototype.setErrorHandler = function (handler) {
                         this.errorHandler = handler;
                     };
-                    /**
-                     * Parses the given string.
-                     * @param {string} s
-                     */
                     AbstractParser.prototype.parse$java_lang_String = function (s) {
                         try {
                             this.reader = new org.apache.batik.util.io.StringNormalizingReader(s);
@@ -1507,6 +1439,7 @@ var org;
                             }
                             this.current = this.reader.read();
                         }
+                        ;
                     };
                     /**
                      * Skips the whitespaces and an optional comma.
@@ -1523,6 +1456,7 @@ var org;
                             }
                             this.current = this.reader.read();
                         }
+                        ;
                         if (this.current == ','.charCodeAt(0)) {
                             wsp2: for (;;) {
                                 switch ((this.current = this.reader.read())) {
@@ -1534,6 +1468,7 @@ var org;
                                     case 10:
                                 }
                             }
+                            ;
                         }
                     };
                     return AbstractParser;
@@ -1562,6 +1497,7 @@ var org;
                  *
                  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
                  * @version $Id$
+                 * @class
                  */
                 var AWTPathProducer = (function () {
                     function AWTPathProducer() {
@@ -1576,7 +1512,7 @@ var org;
                      * Utility method for creating an ExtendedGeneralPath.
                      * @param {{ str: string, cursor: number }} r The reader used to read the path specification.
                      * @param {number} wr The winding rule to use for creating the path.
-                     * @return {java.awt.Shape}
+                     * @return {*}
                      */
                     AWTPathProducer.createShape = function (r, wr) {
                         var p = new org.apache.batik.parser.PathParser();
@@ -1602,7 +1538,7 @@ var org;
                     };
                     /**
                      * Returns the Shape object initialized during the last parsing.
-                     * @return {java.awt.Shape} the shape or null if this handler has not been used by
+                     * @return {*} the shape or null if this handler has not been used by
                      * a parser.
                      */
                     AWTPathProducer.prototype.getShape = function () {
@@ -1645,8 +1581,8 @@ var org;
                     AWTPathProducer.prototype.closePath = function () {
                         this.path.closePath();
                         var pt = this.path.getCurrentPoint();
-                        this.currentX = (Math.fround ? (pt.getX()) : Math.fround(pt.getX()));
-                        this.currentY = (Math.fround ? (pt.getY()) : Math.fround(pt.getY()));
+                        this.currentX = pt.getX();
+                        this.currentY = pt.getY();
                     };
                     /**
                      * Implements {@link PathHandler#linetoRel(float,float)}.
@@ -1827,6 +1763,7 @@ var org;
                  *
                  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
                  * @version $Id$
+                 * @class
                  */
                 var DefaultErrorHandler = (function () {
                     function DefaultErrorHandler() {
@@ -1856,7 +1793,10 @@ var org;
             var parser;
             (function (parser) {
                 /**
-                 * This class does not need to be instantiated.
+                 * The class provides an adapter for PathHandler.
+                 *
+                 * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
+                 * @version $Id$
                  * @class
                  */
                 var DefaultPathHandler = (function () {
@@ -2058,6 +1998,7 @@ var org;
                  * @param {number} line The line of the last parsed character.
                  * @param {number} column The column of the last parsed character.
                  * @class
+                 * @extends Error
                  */
                 var ParseException = (function (_super) {
                     __extends(ParseException, _super);
@@ -2079,7 +2020,7 @@ var org;
                                 _this.columnNumber = column;
                             })();
                         }
-                        else if (((typeof message === 'string') || message === null) && ((line != null && (line["__class"] == "java.lang.Exception")) || line === null) && column === undefined) {
+                        else if (((typeof message === 'string') || message === null) && ((line != null && (line["__classes"] && line["__classes"].indexOf("java.lang.Exception") >= 0) || line != null && line instanceof Error) || line === null) && column === undefined) {
                             var __args = Array.prototype.slice.call(arguments);
                             var e_1 = __args[1];
                             _this = _super.call(this, message) || this;
@@ -2094,7 +2035,7 @@ var org;
                                 _this.exception = e_1;
                             })();
                         }
-                        else if (((message != null && (message["__class"] == "java.lang.Exception")) || message === null) && line === undefined && column === undefined) {
+                        else if (((message != null && (message["__classes"] && message["__classes"].indexOf("java.lang.Exception") >= 0) || message != null && message instanceof Error) || message === null) && line === undefined && column === undefined) {
                             var __args = Array.prototype.slice.call(arguments);
                             var e_2 = __args[0];
                             _this = _super.call(this) || this;
@@ -2169,7 +2110,10 @@ var org;
             var util;
             (function (util) {
                 /**
-                 * This class does not need to be instantiated.
+                 * This class contains utility functions to manage encodings.
+                 *
+                 * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
+                 * @version $Id$
                  * @class
                  */
                 var EncodingUtilities = (function () {
@@ -2462,8 +2406,10 @@ var org;
                 var io;
                 (function (io) {
                     /**
-                     * Creates a new CharDecoder object.
-                     * @param {{ str: string, cursor: number }} is The stream to read.
+                     * This class is the superclass of all the char decoders.
+                     *
+                     * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
+                     * @version $Id$
                      * @class
                      */
                     var AbstractCharDecoder = (function () {
@@ -2498,14 +2444,14 @@ var org;
                          * @param {string} encoding The encoding name.
                          */
                         AbstractCharDecoder.prototype.charError = function (encoding) {
-                            throw Object.defineProperty(new Error(org.apache.batik.util.io.Messages.formatMessage("invalid.char", [encoding])), '__class', { configurable: true, value: 'java.io.IOException' });
+                            throw Object.defineProperty(new Error(org.apache.batik.util.io.Messages.formatMessage("invalid.char", [encoding])), '__classes', { configurable: true, value: ['java.lang.Throwable', 'java.io.IOException', 'java.lang.Object', 'java.lang.Exception'] });
                         };
                         /**
                          * To throws an exception when the end of stream was unexpected.
                          * @param {string} encoding The encoding name.
                          */
                         AbstractCharDecoder.prototype.endOfStreamError = function (encoding) {
-                            throw Object.defineProperty(new Error(org.apache.batik.util.io.Messages.formatMessage("end.of.stream", [encoding])), '__class', { configurable: true, value: 'java.io.IOException' });
+                            throw Object.defineProperty(new Error(org.apache.batik.util.io.Messages.formatMessage("end.of.stream", [encoding])), '__classes', { configurable: true, value: ['java.lang.Throwable', 'java.io.IOException', 'java.lang.Object', 'java.lang.Exception'] });
                         };
                         return AbstractCharDecoder;
                     }());
@@ -2624,19 +2570,12 @@ var org;
                      *
                      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
                      * @version $Id$
+                     * @class
                      * @extends { str: string, cursor: number }
                      */
                     var NormalizingReader = (function () {
                         function NormalizingReader() {
                         }
-                        /**
-                         * Read characters into a portion of an array.
-                         * @param {Array} cbuf  Destination buffer
-                         * @param {number} off   Offset at which to start writing characters
-                         * @param {number} len   Maximum number of characters to read
-                         * @return {number} The number of characters read, or -1 if the end of the
-                         * stream has been reached
-                         */
                         NormalizingReader.prototype.read$char_A$int$int = function (cbuf, off, len) {
                             if (len === 0) {
                                 return 0;
@@ -2736,7 +2675,10 @@ var org;
                 var io;
                 (function (io) {
                     /**
-                     * This class does not need to be instantiated.
+                     * This class manages the message for the IO utilities classes.
+                     *
+                     * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
+                     * @version $Id$
                      * @class
                      */
                     var Messages = (function () {
@@ -2794,6 +2736,7 @@ var org;
                  *
                  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
                  * @version $Id$
+                 * @class
                  * @extends org.apache.batik.parser.AbstractParser
                  */
                 var NumberParser = (function (_super) {
@@ -2855,6 +2798,7 @@ var org;
                                     }
                                 }
                                 ;
+                                ;
                             case 49 /* '1' */:
                             case 50 /* '2' */:
                             case 51 /* '3' */:
@@ -2889,6 +2833,7 @@ var org;
                                         case 57 /* '9' */:
                                     }
                                 }
+                                ;
                                 ;
                         }
                         if (this.current == '.'.charCodeAt(0)) {
@@ -2926,6 +2871,7 @@ var org;
                                                 case 48 /* '0' */:
                                             }
                                         }
+                                        ;
                                     }
                                 case 49 /* '1' */:
                                 case 50 /* '2' */:
@@ -2958,6 +2904,7 @@ var org;
                                             case 57 /* '9' */:
                                         }
                                     }
+                                    ;
                                     ;
                             }
                         }
@@ -3020,6 +2967,7 @@ var org;
                                             }
                                         }
                                         ;
+                                        ;
                                     case 49 /* '1' */:
                                     case 50 /* '2' */:
                                     case 51 /* '3' */:
@@ -3050,6 +2998,7 @@ var org;
                                                 case 57 /* '9' */:
                                             }
                                         }
+                                        ;
                                         ;
                                 }
                                 ;
@@ -3083,7 +3032,7 @@ var org;
                         if (mant >= (1 << 26)) {
                             mant++;
                         }
-                        return (Math.fround ? (((exp > 0) ? mant * NumberParser.pow10_$LI$()[exp] : mant / NumberParser.pow10_$LI$()[-exp])) : Math.fround(((exp > 0) ? mant * NumberParser.pow10_$LI$()[exp] : mant / NumberParser.pow10_$LI$()[-exp])));
+                        return ((exp > 0) ? mant * NumberParser.pow10_$LI$()[exp] : mant / NumberParser.pow10_$LI$()[-exp]);
                     };
                     NumberParser.pow10_$LI$ = function () { NumberParser.__static_initialize(); if (NumberParser.pow10 == null)
                         NumberParser.pow10 = (function (s) { var a = []; while (s-- > 0)
@@ -3093,6 +3042,7 @@ var org;
                         for (var i = 0; i < NumberParser.pow10_$LI$().length; i++) {
                             NumberParser.pow10_$LI$()[i] = Math.pow(10, i);
                         }
+                        ;
                     };
                     return NumberParser;
                 }(org.apache.batik.parser.AbstractParser));
@@ -3117,6 +3067,7 @@ var org;
                      * Creates a new ASCIIDecoder.
                      * @param {{ str: string, cursor: number }} is
                      * @class
+                     * @extends org.apache.batik.util.io.AbstractCharDecoder
                      */
                     var ASCIIDecoder = (function (_super) {
                         __extends(ASCIIDecoder, _super);
@@ -3163,6 +3114,7 @@ var org;
                      * Creates a new ISO_8859_1Decoder.
                      * @param {{ str: string, cursor: number }} is
                      * @class
+                     * @extends org.apache.batik.util.io.AbstractCharDecoder
                      */
                     var ISO_8859_1Decoder = (function (_super) {
                         __extends(ISO_8859_1Decoder, _super);
@@ -3207,6 +3159,7 @@ var org;
                      * @param {boolean} be Whether or not the given stream's byte-order is
                      * big-endian.
                      * @class
+                     * @extends org.apache.batik.util.io.AbstractCharDecoder
                      */
                     var UTF16Decoder = (function (_super) {
                         __extends(UTF16Decoder, _super);
@@ -3299,6 +3252,7 @@ var org;
                      * Creates a new UTF8Decoder.
                      * @param {{ str: string, cursor: number }} is
                      * @class
+                     * @extends org.apache.batik.util.io.AbstractCharDecoder
                      */
                     var UTF8Decoder = (function (_super) {
                         __extends(UTF8Decoder, _super);
@@ -3417,6 +3371,7 @@ var org;
                      * @param {string} enc The standard encoding name. A null encoding means
                      * ISO-8859-1.
                      * @class
+                     * @extends org.apache.batik.util.io.NormalizingReader
                      */
                     var StreamNormalizingReader = (function (_super) {
                         __extends(StreamNormalizingReader, _super);
@@ -3500,12 +3455,6 @@ var org;
                             else
                                 throw new Error('invalid overload');
                         };
-                        /**
-                         * Read a single character.  This method will block until a
-                         * character is available, an I/O error occurs, or the end of the
-                         * stream is reached.
-                         * @return {number}
-                         */
                         StreamNormalizingReader.prototype.read$ = function () {
                             var result = this.nextChar;
                             if (result !== -1) {
@@ -3561,7 +3510,7 @@ var org;
                          * Creates the CharDecoder mapped with the given encoding name.
                          * @param {{ str: string, cursor: number }} is
                          * @param {string} enc
-                         * @return {org.apache.batik.util.io.CharDecoder}
+                         * @return {*}
                          */
                         StreamNormalizingReader.prototype.createCharDecoder = function (is, enc) {
                             var cdf = (function (m, k) { if (m.entries == null)
@@ -3623,6 +3572,7 @@ var org;
                     (function (StreamNormalizingReader) {
                         /**
                          * To create an ASCIIDecoder.
+                         * @class
                          */
                         var ASCIIDecoderFactory = (function () {
                             function ASCIIDecoderFactory() {
@@ -3637,6 +3587,7 @@ var org;
                         ASCIIDecoderFactory["__interfaces"] = ["org.apache.batik.util.io.StreamNormalizingReader.CharDecoderFactory"];
                         /**
                          * To create an ISO_8859_1Decoder.
+                         * @class
                          */
                         var ISO_8859_1DecoderFactory = (function () {
                             function ISO_8859_1DecoderFactory() {
@@ -3651,6 +3602,7 @@ var org;
                         ISO_8859_1DecoderFactory["__interfaces"] = ["org.apache.batik.util.io.StreamNormalizingReader.CharDecoderFactory"];
                         /**
                          * To create a UTF8Decoder.
+                         * @class
                          */
                         var UTF8DecoderFactory = (function () {
                             function UTF8DecoderFactory() {
@@ -3665,6 +3617,7 @@ var org;
                         UTF8DecoderFactory["__interfaces"] = ["org.apache.batik.util.io.StreamNormalizingReader.CharDecoderFactory"];
                         /**
                          * To create a UTF16Decoder.
+                         * @class
                          */
                         var UTF16DecoderFactory = (function () {
                             function UTF16DecoderFactory() {
@@ -3696,6 +3649,7 @@ var org;
                      * Creates a new StringNormalizingReader.
                      * @param {string} s The string to read.
                      * @class
+                     * @extends org.apache.batik.util.io.NormalizingReader
                      */
                     var StringNormalizingReader = (function (_super) {
                         __extends(StringNormalizingReader, _super);
@@ -3723,12 +3677,6 @@ var org;
                             else
                                 throw new Error('invalid overload');
                         };
-                        /**
-                         * Read a single character.  This method will block until a
-                         * character is available, an I/O error occurs, or the end of the
-                         * stream is reached.
-                         * @return {number}
-                         */
                         StringNormalizingReader.prototype.read$ = function () {
                             var result = (this.length === this.next) ? -1 : (this.string.charAt(this.next++)).charCodeAt(0);
                             if (result <= 13) {
@@ -3788,6 +3736,7 @@ var org;
                 /**
                  * Creates a new PathParser.
                  * @class
+                 * @extends org.apache.batik.parser.NumberParser
                  */
                 var PathParser = (function (_super) {
                     __extends(PathParser, _super);
@@ -3806,14 +3755,14 @@ var org;
                      * <p>Applications may register a new or different handler in the
                      * middle of a parse, and the parser must begin using the new
                      * handler immediately.</p>
-                     * @param {org.apache.batik.parser.PathHandler} handler The transform list handler.
+                     * @param {*} handler The transform list handler.
                      */
                     PathParser.prototype.setPathHandler = function (handler) {
                         this.pathHandler = handler;
                     };
                     /**
                      * Returns the path handler in use.
-                     * @return {org.apache.batik.parser.PathHandler}
+                     * @return {*}
                      */
                     PathParser.prototype.getPathHandler = function () {
                         return this.pathHandler;
@@ -3902,6 +3851,7 @@ var org;
                             }
                             ;
                         }
+                        ;
                         this.skipSpaces();
                         if (this.current !== -1) {
                             this.reportError("end.of.stream.expected", [new Number(this.current).valueOf()]);
@@ -3970,6 +3920,7 @@ var org;
                             this.pathHandler.linetoRel(x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'L' command.
@@ -4007,6 +3958,7 @@ var org;
                             this.pathHandler.linetoAbs(x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'h' command.
@@ -4040,6 +3992,7 @@ var org;
                             this.pathHandler.linetoHorizontalRel(x);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'H' command.
@@ -4073,6 +4026,7 @@ var org;
                             this.pathHandler.linetoHorizontalAbs(x);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'v' command.
@@ -4106,6 +4060,7 @@ var org;
                             this.pathHandler.linetoVerticalRel(x);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'V' command.
@@ -4139,6 +4094,7 @@ var org;
                             this.pathHandler.linetoVerticalAbs(x);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'c' command.
@@ -4182,6 +4138,7 @@ var org;
                             this.pathHandler.curvetoCubicRel(x1, y1, x2, y2, x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'C' command.
@@ -4225,6 +4182,7 @@ var org;
                             this.pathHandler.curvetoCubicAbs(x1, y1, x2, y2, x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'q' command.
@@ -4264,6 +4222,7 @@ var org;
                             this.pathHandler.curvetoQuadraticRel(x1, y1, x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'Q' command.
@@ -4303,6 +4262,7 @@ var org;
                             this.pathHandler.curvetoQuadraticAbs(x1, y1, x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 's' command.
@@ -4342,6 +4302,7 @@ var org;
                             this.pathHandler.curvetoCubicSmoothRel(x2, y2, x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'S' command.
@@ -4381,6 +4342,7 @@ var org;
                             this.pathHandler.curvetoCubicSmoothAbs(x2, y2, x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 't' command.
@@ -4416,6 +4378,7 @@ var org;
                             this.pathHandler.curvetoQuadraticSmoothRel(x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'T' command.
@@ -4451,6 +4414,7 @@ var org;
                             this.pathHandler.curvetoQuadraticSmoothAbs(x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'a' command.
@@ -4520,6 +4484,7 @@ var org;
                             this.pathHandler.arcRel(rx, ry, ax, laf, sf, x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Parses a 'A' command.
@@ -4589,6 +4554,7 @@ var org;
                             this.pathHandler.arcAbs(rx, ry, ax, laf, sf, x, y);
                             expectNumber = this.skipCommaSpaces2();
                         }
+                        ;
                     };
                     /**
                      * Skips a sub-path.
@@ -4605,6 +4571,7 @@ var org;
                             }
                             this.current = this.reader.read();
                         }
+                        ;
                     };
                     PathParser.prototype.reportUnexpected = function (ch) {
                         this.reportUnexpectedCharacterError(this.current);
@@ -4627,6 +4594,7 @@ var org;
                             }
                             this.current = this.reader.read();
                         }
+                        ;
                         if (this.current != ','.charCodeAt(0))
                             return false;
                         wsp2: for (;;) {
@@ -4640,6 +4608,7 @@ var org;
                                     break;
                             }
                         }
+                        ;
                         return true;
                     };
                     return PathParser;

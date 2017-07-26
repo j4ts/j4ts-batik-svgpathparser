@@ -103,29 +103,14 @@ declare namespace org.apache.batik.ext.awt.geom {
          * skipping a close command (if present).
          */
         checkMoveTo(): void;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {java.awt.Shape} s
-         * @param {boolean} connect
-         */
         append$java_awt_Shape$boolean(s: java.awt.Shape, connect: boolean): void;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {java.awt.Shape} s
+         * @param {*} s
          * @param {boolean} connect
          */
         append(s?: any, connect?: any): any;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {java.awt.geom.PathIterator} pi
-         * @param {boolean} connect
-         */
         append$java_awt_geom_PathIterator$boolean(pi: java.awt.geom.PathIterator, connect: boolean): void;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {org.apache.batik.ext.awt.geom.ExtendedPathIterator} epi
-         * @param {boolean} connect
-         */
         append$org_apache_batik_ext_awt_geom_ExtendedPathIterator$boolean(epi: org.apache.batik.ext.awt.geom.ExtendedPathIterator, connect: boolean): void;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
@@ -154,7 +139,7 @@ declare namespace org.apache.batik.ext.awt.geom {
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
          * @param {java.awt.geom.AffineTransform} at
-         * @return {java.awt.Shape}
+         * @return {*}
          */
         createTransformedShape(at: java.awt.geom.AffineTransform): java.awt.Shape;
         /**
@@ -162,27 +147,8 @@ declare namespace org.apache.batik.ext.awt.geom {
          * @return {java.awt.geom.Rectangle2D}
          */
         getBounds2D(): java.awt.geom.Rectangle2D;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {number} x
-         * @param {number} y
-         * @return {boolean}
-         */
         contains$double$double(x: number, y: number): boolean;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {java.awt.geom.Point2D} p
-         * @return {boolean}
-         */
         contains$java_awt_geom_Point2D(p: java.awt.geom.Point2D): boolean;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {number} x
-         * @param {number} y
-         * @param {number} w
-         * @param {number} h
-         * @return {boolean}
-         */
         contains$double$double$double$double(x: number, y: number, w: number, h: number): boolean;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
@@ -193,20 +159,7 @@ declare namespace org.apache.batik.ext.awt.geom {
          * @return {boolean}
          */
         contains(x?: any, y?: any, w?: any, h?: any): any;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {java.awt.geom.Rectangle2D} r
-         * @return {boolean}
-         */
         contains$java_awt_geom_Rectangle2D(r: java.awt.geom.Rectangle2D): boolean;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {number} x
-         * @param {number} y
-         * @param {number} w
-         * @param {number} h
-         * @return {boolean}
-         */
         intersects$double$double$double$double(x: number, y: number, w: number, h: number): boolean;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
@@ -217,35 +170,19 @@ declare namespace org.apache.batik.ext.awt.geom {
          * @return {boolean}
          */
         intersects(x?: any, y?: any, w?: any, h?: any): any;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {java.awt.geom.Rectangle2D} r
-         * @return {boolean}
-         */
         intersects$java_awt_geom_Rectangle2D(r: java.awt.geom.Rectangle2D): boolean;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {java.awt.geom.AffineTransform} at
-         * @return {java.awt.geom.PathIterator}
-         */
         getPathIterator$java_awt_geom_AffineTransform(at: java.awt.geom.AffineTransform): java.awt.geom.PathIterator;
-        /**
-         * Delegates to the enclosed <code>GeneralPath</code>.
-         * @param {java.awt.geom.AffineTransform} at
-         * @param {number} flatness
-         * @return {java.awt.geom.PathIterator}
-         */
         getPathIterator$java_awt_geom_AffineTransform$double(at: java.awt.geom.AffineTransform, flatness: number): java.awt.geom.PathIterator;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
          * @param {java.awt.geom.AffineTransform} at
          * @param {number} flatness
-         * @return {java.awt.geom.PathIterator}
+         * @return {*}
          */
         getPathIterator(at?: any, flatness?: any): any;
         /**
          * Delegates to the enclosed <code>GeneralPath</code>.
-         * @return {org.apache.batik.ext.awt.geom.ExtendedPathIterator}
+         * @return {*}
          */
         getExtendedPathIterator(): org.apache.batik.ext.awt.geom.ExtendedPathIterator;
         /**
@@ -293,6 +230,7 @@ declare namespace org.apache.batik.ext.awt.geom {
      *
      * @author <a href="mailto:deweese@apache.org">Thomas DeWeese</a>
      * @version $Id$
+     * @class
      */
     interface ExtendedPathIterator {
         currentSegment(coords?: any): any;
@@ -375,11 +313,12 @@ declare namespace org.apache.batik.ext.awt.geom {
      * curves and elliptical arcs.
      * @author <a href="mailto:deweese@apache.org">Thomas DeWeese</a>
      * @version $Id$
+     * @class
      */
     interface ExtendedShape {
         /**
          * Get an extended Path iterator that may return SEG_ARCTO commands
-         * @return {org.apache.batik.ext.awt.geom.ExtendedPathIterator}
+         * @return {*}
          */
         getExtendedPathIterator(): org.apache.batik.ext.awt.geom.ExtendedPathIterator;
     }
@@ -391,6 +330,7 @@ declare namespace org.apache.batik.i18n {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      */
     class LocaleGroup {
         /**
@@ -423,6 +363,7 @@ declare namespace org.apache.batik.i18n {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      */
     interface Localizable {
         /**
@@ -456,7 +397,7 @@ declare namespace org.apache.batik.i18n {
     /**
      * Same as LocalizableSupport(cls, null).
      * @param {string} s
-     * @param {Function<>} cls
+     * @param {*} cls
      * @param {*} cl
      * @class
      */
@@ -485,11 +426,11 @@ declare namespace org.apache.batik.i18n {
          * The resources
          */
         resourceBundles: Array<any>;
-        lastResourceClass: Function;
+        lastResourceClass: any;
         /**
          * The class to lookup bundleName from.
          */
-        cls: Function;
+        cls: any;
         constructor(s?: any, cls?: any, cl?: any);
         /**
          * Implements {@link org.apache.batik.i18n.Localizable#setLocale(Locale)}.
@@ -542,13 +483,9 @@ declare namespace org.apache.batik.i18n {
          * @return {boolean}
          */
         setUsedLocale(): boolean;
-        /**
-         * Here for backwards compatability
-         * @return {*}
-         */
         getResourceBundle$(): any;
         hasNextResourceBundle(i: number): boolean;
-        lookupResourceBundle(bundle: string, theClass: Function): any;
+        lookupResourceBundle(bundle: string, theClass: any): any;
         getResourceBundle$int(i: number): any;
         getResourceBundle(i?: any): any;
         /**
@@ -574,6 +511,7 @@ declare namespace org.apache.batik.parser {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      */
     abstract class AbstractParser implements org.apache.batik.parser.Parser {
         /**
@@ -629,13 +567,9 @@ declare namespace org.apache.batik.parser {
          * <p>Applications may register a new or different handler in the
          * middle of a parse, and the parser must begin using the new
          * handler immediately.</p>
-         * @param {org.apache.batik.parser.ErrorHandler} handler The error handler.
+         * @param {*} handler The error handler.
          */
         setErrorHandler(handler: org.apache.batik.parser.ErrorHandler): void;
-        /**
-         * Parses the given string.
-         * @param {string} s
-         */
         parse$java_lang_String(s: string): void;
         /**
          * Parses the given string.
@@ -698,6 +632,7 @@ declare namespace org.apache.batik.parser {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      */
     class AWTPathProducer implements org.apache.batik.parser.PathHandler, org.apache.batik.parser.ShapeProducer {
         /**
@@ -728,7 +663,7 @@ declare namespace org.apache.batik.parser {
          * Utility method for creating an ExtendedGeneralPath.
          * @param {{ str: string, cursor: number }} r The reader used to read the path specification.
          * @param {number} wr The winding rule to use for creating the path.
-         * @return {java.awt.Shape}
+         * @return {*}
          */
         static createShape(r: {
             str: string;
@@ -746,7 +681,7 @@ declare namespace org.apache.batik.parser {
         getWindingRule(): number;
         /**
          * Returns the Shape object initialized during the last parsing.
-         * @return {java.awt.Shape} the shape or null if this handler has not been used by
+         * @return {*} the shape or null if this handler has not been used by
          * a parser.
          */
         getShape(): java.awt.Shape;
@@ -909,6 +844,7 @@ declare namespace org.apache.batik.parser {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      */
     class DefaultErrorHandler implements org.apache.batik.parser.ErrorHandler {
         /**
@@ -922,7 +858,10 @@ declare namespace org.apache.batik.parser {
 }
 declare namespace org.apache.batik.parser {
     /**
-     * This class does not need to be instantiated.
+     * The class provides an adapter for PathHandler.
+     *
+     * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
+     * @version $Id$
      * @class
      */
     class DefaultPathHandler implements org.apache.batik.parser.PathHandler {
@@ -1091,6 +1030,7 @@ declare namespace org.apache.batik.parser {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      */
     interface ErrorHandler {
         /**
@@ -1107,6 +1047,7 @@ declare namespace org.apache.batik.parser {
      * @param {number} line The line of the last parsed character.
      * @param {number} column The column of the last parsed character.
      * @class
+     * @extends Error
      */
     class ParseException extends Error {
         /**
@@ -1154,6 +1095,7 @@ declare namespace org.apache.batik.parser {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      */
     interface Parser extends org.apache.batik.i18n.Localizable {
         /**
@@ -1171,7 +1113,7 @@ declare namespace org.apache.batik.parser {
          * <p>Applications may register a new or different handler in the
          * middle of a parse, and the parser must begin using the new
          * handler immediately.</p>
-         * @param {org.apache.batik.parser.ErrorHandler} handler The error handler.
+         * @param {*} handler The error handler.
          */
         setErrorHandler(handler: org.apache.batik.parser.ErrorHandler): any;
     }
@@ -1184,6 +1126,7 @@ declare namespace org.apache.batik.parser {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      */
     interface PathHandler {
         /**
@@ -1390,11 +1333,12 @@ declare namespace org.apache.batik.parser {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      */
     interface ShapeProducer {
         /**
          * Returns the Shape object initialized during the last parsing.
-         * @return {java.awt.Shape} the shape or null if this handler has not been used to
+         * @return {*} the shape or null if this handler has not been used to
          * parse a path.
          */
         getShape(): java.awt.Shape;
@@ -1412,7 +1356,10 @@ declare namespace org.apache.batik.parser {
 }
 declare namespace org.apache.batik.util {
     /**
-     * This class does not need to be instantiated.
+     * This class contains utility functions to manage encodings.
+     *
+     * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
+     * @version $Id$
      * @class
      */
     class EncodingUtilities {
@@ -1436,12 +1383,13 @@ declare namespace org.apache.batik.util {
 }
 declare namespace org.apache.batik.util.io {
     /**
-     * Creates a new CharDecoder object.
-     * @param {{ str: string, cursor: number }} is The stream to read.
+     * This class is the superclass of all the char decoders.
+     *
+     * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
+     * @version $Id$
      * @class
      */
     abstract class AbstractCharDecoder implements org.apache.batik.util.io.CharDecoder {
-        abstract readChar(): any;
         /**
          * The buffer size.
          */
@@ -1488,6 +1436,7 @@ declare namespace org.apache.batik.util.io {
          * @param {string} encoding The encoding name.
          */
         endOfStreamError(encoding: string): void;
+        abstract readChar(): any;
     }
 }
 declare namespace org.apache.batik.util.io {
@@ -1497,6 +1446,7 @@ declare namespace org.apache.batik.util.io {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      */
     interface CharDecoder {
         /**
@@ -1551,17 +1501,10 @@ declare namespace org.apache.batik.util.io {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      * @extends { str: string, cursor: number }
      */
     abstract class NormalizingReader {
-        /**
-         * Read characters into a portion of an array.
-         * @param {Array} cbuf  Destination buffer
-         * @param {number} off   Offset at which to start writing characters
-         * @param {number} len   Maximum number of characters to read
-         * @return {number} The number of characters read, or -1 if the end of the
-         * stream has been reached
-         */
         read$char_A$int$int(cbuf: string[], off: number, len: number): number;
         /**
          * Read characters into a portion of an array.
@@ -1618,7 +1561,10 @@ declare namespace org.apache.batik.util.io {
 }
 declare namespace org.apache.batik.util.io {
     /**
-     * This class does not need to be instantiated.
+     * This class manages the message for the IO utilities classes.
+     *
+     * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
+     * @version $Id$
      * @class
      */
     class Messages {
@@ -1658,6 +1604,7 @@ declare namespace org.apache.batik.parser {
      *
      * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
      * @version $Id$
+     * @class
      * @extends org.apache.batik.parser.AbstractParser
      */
     abstract class NumberParser extends org.apache.batik.parser.AbstractParser {
@@ -1689,6 +1636,7 @@ declare namespace org.apache.batik.util.io {
      * Creates a new ASCIIDecoder.
      * @param {{ str: string, cursor: number }} is
      * @class
+     * @extends org.apache.batik.util.io.AbstractCharDecoder
      */
     class ASCIIDecoder extends org.apache.batik.util.io.AbstractCharDecoder {
         constructor(is: {
@@ -1707,6 +1655,7 @@ declare namespace org.apache.batik.util.io {
      * Creates a new ISO_8859_1Decoder.
      * @param {{ str: string, cursor: number }} is
      * @class
+     * @extends org.apache.batik.util.io.AbstractCharDecoder
      */
     class ISO_8859_1Decoder extends org.apache.batik.util.io.AbstractCharDecoder {
         constructor(is: {
@@ -1727,6 +1676,7 @@ declare namespace org.apache.batik.util.io {
      * @param {boolean} be Whether or not the given stream's byte-order is
      * big-endian.
      * @class
+     * @extends org.apache.batik.util.io.AbstractCharDecoder
      */
     class UTF16Decoder extends org.apache.batik.util.io.AbstractCharDecoder {
         /**
@@ -1746,6 +1696,7 @@ declare namespace org.apache.batik.util.io {
      * Creates a new UTF8Decoder.
      * @param {{ str: string, cursor: number }} is
      * @class
+     * @extends org.apache.batik.util.io.AbstractCharDecoder
      */
     class UTF8Decoder extends org.apache.batik.util.io.AbstractCharDecoder {
         /**
@@ -1776,6 +1727,7 @@ declare namespace org.apache.batik.util.io {
      * @param {string} enc The standard encoding name. A null encoding means
      * ISO-8859-1.
      * @class
+     * @extends org.apache.batik.util.io.NormalizingReader
      */
     class StreamNormalizingReader extends org.apache.batik.util.io.NormalizingReader {
         static __static_initialized: boolean;
@@ -1798,12 +1750,6 @@ declare namespace org.apache.batik.util.io {
         column: number;
         constructor(is?: any, enc?: any);
         read(cbuf?: any, off?: any, len?: any): any;
-        /**
-         * Read a single character.  This method will block until a
-         * character is available, an I/O error occurs, or the end of the
-         * stream is reached.
-         * @return {number}
-         */
         read$(): number;
         /**
          * Returns the current line in the stream.
@@ -1823,7 +1769,7 @@ declare namespace org.apache.batik.util.io {
          * Creates the CharDecoder mapped with the given encoding name.
          * @param {{ str: string, cursor: number }} is
          * @param {string} enc
-         * @return {org.apache.batik.util.io.CharDecoder}
+         * @return {*}
          */
         createCharDecoder(is: {
             str: string;
@@ -1839,6 +1785,7 @@ declare namespace org.apache.batik.util.io {
     namespace StreamNormalizingReader {
         /**
          * Represents a CharDecoder factory.
+         * @class
          */
         interface CharDecoderFactory {
             createCharDecoder(is: {
@@ -1848,6 +1795,7 @@ declare namespace org.apache.batik.util.io {
         }
         /**
          * To create an ASCIIDecoder.
+         * @class
          */
         class ASCIIDecoderFactory implements StreamNormalizingReader.CharDecoderFactory {
             createCharDecoder(is: {
@@ -1858,6 +1806,7 @@ declare namespace org.apache.batik.util.io {
         }
         /**
          * To create an ISO_8859_1Decoder.
+         * @class
          */
         class ISO_8859_1DecoderFactory implements StreamNormalizingReader.CharDecoderFactory {
             createCharDecoder(is: {
@@ -1868,6 +1817,7 @@ declare namespace org.apache.batik.util.io {
         }
         /**
          * To create a UTF8Decoder.
+         * @class
          */
         class UTF8DecoderFactory implements StreamNormalizingReader.CharDecoderFactory {
             createCharDecoder(is: {
@@ -1878,6 +1828,7 @@ declare namespace org.apache.batik.util.io {
         }
         /**
          * To create a UTF16Decoder.
+         * @class
          */
         class UTF16DecoderFactory implements StreamNormalizingReader.CharDecoderFactory {
             createCharDecoder(is: {
@@ -1893,6 +1844,7 @@ declare namespace org.apache.batik.util.io {
      * Creates a new StringNormalizingReader.
      * @param {string} s The string to read.
      * @class
+     * @extends org.apache.batik.util.io.NormalizingReader
      */
     class StringNormalizingReader extends org.apache.batik.util.io.NormalizingReader {
         /**
@@ -1917,12 +1869,6 @@ declare namespace org.apache.batik.util.io {
         column: number;
         constructor(s: string);
         read(cbuf?: any, off?: any, len?: any): any;
-        /**
-         * Read a single character.  This method will block until a
-         * character is available, an I/O error occurs, or the end of the
-         * stream is reached.
-         * @return {number}
-         */
         read$(): number;
         /**
          * Returns the current line in the stream.
@@ -1944,6 +1890,7 @@ declare namespace org.apache.batik.parser {
     /**
      * Creates a new PathParser.
      * @class
+     * @extends org.apache.batik.parser.NumberParser
      */
     class PathParser extends org.apache.batik.parser.NumberParser {
         /**
@@ -1960,12 +1907,12 @@ declare namespace org.apache.batik.parser {
          * <p>Applications may register a new or different handler in the
          * middle of a parse, and the parser must begin using the new
          * handler immediately.</p>
-         * @param {org.apache.batik.parser.PathHandler} handler The transform list handler.
+         * @param {*} handler The transform list handler.
          */
         setPathHandler(handler: org.apache.batik.parser.PathHandler): void;
         /**
          * Returns the path handler in use.
-         * @return {org.apache.batik.parser.PathHandler}
+         * @return {*}
          */
         getPathHandler(): org.apache.batik.parser.PathHandler;
         doParse(): void;
